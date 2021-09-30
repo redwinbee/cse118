@@ -1,4 +1,6 @@
-public class CSE118HW01 {
+package cse118hw01.src;
+
+public class Homework01 {
     public static void main(String[] args) {
         System.out.print("Hello Java World");
         System.out.println(" I like programming");

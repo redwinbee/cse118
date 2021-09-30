@@ -1,6 +1,8 @@
+package cse118hw02.src;
+
 import java.util.Scanner;
 
-public class CSE118HW02 {
+public class Homework02 {
     public static void main(String[] args) {
         double y0 = 90.0;
         double y1 = 0.0;

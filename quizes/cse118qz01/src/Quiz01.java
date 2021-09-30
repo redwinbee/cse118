@@ -1,6 +1,8 @@
+package cse118qz01.src;
+
 import java.util.Scanner;
 
-public class CSE118QZ01 {
+public class Quiz01 {
     public static void main(String[] args) {
         final double PI = 3.141592;
         Scanner scanner = new Scanner(System.in);

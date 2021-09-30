@@ -1,6 +1,8 @@
+package cse118hw03.src;
+
 import java.util.Scanner;
 
-public class App {
+public class Homework03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

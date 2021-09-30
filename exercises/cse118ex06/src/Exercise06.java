@@ -67,8 +67,7 @@ public class Exercise06 {
 
         System.out.println("lottery! please enter your guess (10-99): ");
         int guess = scanner.nextInt();
-        // int lottoNum = rand.nextInt(100) + 10; // [10, 99]
-        int lottoNum = 65;
+        int lottoNum = rand.nextInt(100) + 10; // [10, 99]
 
         // extract the digits of the numbers
         int lottoDig1 = lottoNum / 10;

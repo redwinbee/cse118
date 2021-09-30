@@ -1,6 +1,8 @@
+package cse118ex02.src;
+
 import java.util.Scanner;
 
-public class App {
+public class Exercise02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

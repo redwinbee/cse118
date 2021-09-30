@@ -1,6 +1,8 @@
+package cse118ex01.src;
+
 import java.util.Scanner;
 
-public class App {
+public class Exercise01 {
     @SuppressWarnings("unused") // examples aren't used anywhere
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

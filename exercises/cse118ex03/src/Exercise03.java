@@ -1,6 +1,8 @@
+package cse118ex03.src;
+
 import java.util.Scanner;
 
-public class App {
+public class Exercise03 {
     public static void main(String[] args) {
         System.out.println("Convert inches to feet");
         System.out.print("Enter the inches: ");

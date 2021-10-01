@@ -24,23 +24,18 @@ public class Homework03 {
         int temp3 = pos3;
         int temp4 = pos4;
 
-        pos4 = temp1;
         pos1 = temp2;
         pos2 = temp3;
         pos3 = temp4;
+        pos4 = temp1;
 
         System.out.println("values after left shift:");
         System.out.println("pos1 = " + pos1 + "; pos2 = " + pos2 + "; pos3 = " + pos3 + "; pos4 = " + pos4);
 
-        temp1 = pos1;
-        temp2 = pos2;
-        temp3 = pos3;
-        temp4 = pos4;
-
-        pos2 = temp1;
-        pos3 = temp2;
-        pos4 = temp3;
-        pos1 = temp4;
+        pos1 = temp1;
+        pos2 = temp2;
+        pos3 = temp3;
+        pos4 = temp4;
 
         System.out.println("values after right shift:");
         System.out.println("pos1 = " + pos1 + "; pos2 = " + pos2 + "; pos3 = " + pos3 + "; pos4 = " + pos4);

@@ -53,8 +53,8 @@ public class Homework03 {
         System.out.print("number 4: ");
         int num4 = scanner.nextInt();
 
-        double average = (num1 + num2 + num3 + num4) / 4;
-        System.out.println("the average of " + num1 + ", " + num2 + ", " + num3 + "," + num4 + " is: " + average);
+        double average = (num1 + num2 + num3 + num4) / 4.0;
+        System.out.println("the average of " + num1 + ", " + num2 + ", " + num3 + ", " + num4 + " is: " + average);
 
         // --------------------------------------------------------------------
 

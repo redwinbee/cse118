@@ -12,7 +12,7 @@ public class Homework04 {
 
         // ------------------------------------------------------------
 
-        double runHours = 1 + (21.0 / 60) + (34.0 / 3600); // for 20 miles
+        double runHours = 1 + (21 / 60.0) + (34 / 3600.0); // for 20 miles
         double kilom = 20.0 / 1.6;
         double avgSpeed = kilom / runHours;
 
@@ -50,5 +50,111 @@ public class Homework04 {
         System.out.println("is " + someN + " divisible by either 5 or 12 but not both? " + divisBy5Or12Ex);
 
         // ------------------------------------------------------------
+
+        int season = rand.nextInt(13);
+        switch (season) {
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("spring");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("summer");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("fall");
+                break;
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("winter");
+                break;
+        }
+
+        // ------------------------------------------------------------
+
+        int x = rand.nextInt(89) + 10;
+        int tens = x / 10;
+        int ones = x % 10;
+
+        if (tens < ones) {
+            int y = (ones * 10) + tens;
+            System.out.println("old: " + x);
+            System.out.println("new: " + y);
+        } else {
+            System.out.println("no change, original num: " + x);
+        }
+
+        // ------------------------------------------------------------
+
+        int f = rand.nextInt(8999) + 1000; // [1000, 9999] (only even)
+        int thousandth = f / 1000;
+        int hundredth = f / 100 % 10;
+        int tenth = f % 100 / 10;
+        int oness = f % 1000 % 10;
+
+        int lessFive = 0;
+        int moreFive = 0;
+        if (thousandth < 5) {
+            lessFive++;
+        } else {
+            moreFive++;
+        }
+
+        if (hundredth < 5) {
+            lessFive++;
+        } else {
+            moreFive++;
+        }
+
+        if (tenth < 5) {
+            lessFive++;
+        } else {
+            moreFive++;
+        }
+
+        if (oness < 5) {
+            lessFive++;
+        } else {
+            moreFive++;
+        }
+
+        System.out.println("num: " + f);
+        System.out.println(
+                "there are " + lessFive + " digit(s) less than 5 and " + moreFive + " digit(s) greater than 5.");
+
+        // ------------------------------------------------------------
+
+        int px = rand.nextInt(21) - 10;
+        int py = rand.nextInt(21) - 10;
+
+        System.out.println("chosen point: (" + px + ", " + py + ")");
+
+        if (px == 0 && py == 0) {
+            System.out.println("point is on the origin.");
+        } else if (px == 0) {
+            System.out.println("point is on the y-axis");
+        } else if (py == 0) {
+            System.out.println("point is on the x-axis");
+        } else {
+            // now we determine in which quadrant our point lies
+            if (px > 0) {
+                if (py > 0) {
+                    System.out.println("point is in quadrant 1");
+                } else {
+                    System.out.println("point is in qudrant 4");
+                }
+            } else {
+                if (py > 0) {
+                    System.out.println("point is in quadrant 2");
+                } else {
+                    System.out.println("point is in qudrant 3");
+                }
+            }
+        }
     }
 }

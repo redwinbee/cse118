@@ -23,7 +23,7 @@ public class Homework04 {
         Random rand = new Random();
         int from0To200 = rand.nextInt(201);
         int from0To80 = rand.nextInt(81);
-        int fromN10To10 = rand.nextInt(11) - 10;
+        int fromN10To10 = rand.nextInt(21) - 10;
         double from10To99 = rand.nextDouble(100.0) + 10.0;
 
         System.out.println("rand [0, 200] = " + from0To200);

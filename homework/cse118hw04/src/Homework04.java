@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class Homework04 {
     public static void main(String[] args) {
-        double step1 = ((Math.PI * (10_000)) + 0.5); // 31416.426500
+        final double PI = 3.141592;
+        double step1 = ((PI * (10_000)) + 0.5); // 31416.426500
         double step2 = (int) step1; // 31416
         double rounded = step2 / 10_000.0; // 3.1416
 
@@ -13,7 +14,7 @@ public class Homework04 {
         // ------------------------------------------------------------
 
         double runHours = 1 + (21 / 60.0) + (34 / 3600.0); // for 20 miles
-        double kilom = 20.0 / 1.6;
+        double kilom = 20.0 * 1.6;
         double avgSpeed = kilom / runHours;
 
         System.out.println("the average speed of the runner is: " + avgSpeed + " kph");
@@ -129,8 +130,8 @@ public class Homework04 {
 
         // ------------------------------------------------------------
 
-        int px = rand.nextInt(21) - 10;
-        int py = rand.nextInt(21) - 10;
+        double px = rand.nextInt(21) - 10;
+        double py = rand.nextInt(21) - 10;
 
         System.out.println("chosen point: (" + px + ", " + py + ")");
 

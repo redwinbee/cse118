@@ -100,5 +100,33 @@ public class Homework05 {
         } else {
             System.out.println("nothing to do! input is: " + input);
         }
+
+        scanner.close();
+
+        // -------------------------------------------------------------
+
+        double d1 = Math.random() * 10;
+        double d2 = Math.random() * 10;
+
+        double delta = Math.abs(d1 - d2); // method 1
+        double diff = d1 > d2 ? d1 - d2 : d2 - d1; // method 2
+        if (delta > 0.0000 && diff > 0.0000) {
+            System.out.println("d1 and d2 are not equal!");
+            System.out.println("delta: " + delta);
+            System.out.println("diff : " + diff);
+        } else {
+            System.out.println("d1 and d2 are equal!");
+        }
+
+        // -------------------------------------------------------------
+
+        char ch = 'A';
+        char chPrev = --ch;
+
+        if ((chPrev >= 'A' && chPrev <= 'Z') || (chPrev >= 'a' && chPrev <= 'z')) {
+            System.out.println("the previous character is a letter");
+        } else {
+            System.out.println("the previous character is not a letter");
+        }
     }
 }

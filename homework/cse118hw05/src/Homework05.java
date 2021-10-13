@@ -120,13 +120,37 @@ public class Homework05 {
 
         // -------------------------------------------------------------
 
-        char ch = 'A';
-        char chPrev = --ch;
+        char origin = (char) rand.nextInt(128);
+        char ch = origin;
+        char prev = --ch;
 
-        if ((chPrev >= 'A' && chPrev <= 'Z') || (chPrev >= 'a' && chPrev <= 'z')) {
+        if ((prev >= 'A' && prev <= 'Z') || (prev >= 'a' && prev <= 'z')) {
             System.out.println("the previous character is a letter");
         } else {
             System.out.println("the previous character is not a letter");
+        }
+
+        ch = origin;
+        ch += 3;
+
+        if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+            System.out.println("the third character is a letter");
+        } else {
+            System.out.println("the third character is not a letter");
+        }
+
+        // -------------------------------------------------------------
+
+        double a = Math.random() * 10;
+        double b = Math.random() * 10;
+        double c = Math.random() * 10;
+
+        double sides = (a * a) + (b * b);
+        double hypo = (c * c);
+        if (Math.abs(sides - hypo) <= 0.000000) {
+            System.out.println("it's a right triangle!");
+        } else {
+            System.out.println("not a right triangle...");
         }
     }
 }

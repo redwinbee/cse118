@@ -6,7 +6,7 @@ public class Homework04 {
     public static void main(String[] args) {
         final double PI = 3.141592;
         double step1 = ((PI * (10_000)) + 0.5); // 31416.426500
-        double step2 = (int) step1; // 31416
+        double step2 = (int) step1; // 31416.0
         double rounded = step2 / 10_000.0; // 3.1416
 
         System.out.println("PI rounded off is: " + rounded);
@@ -94,10 +94,11 @@ public class Homework04 {
 
         int f = rand.nextInt(8999) + 1000; // [1000, 9999] (only even)
         int thousandth = f / 1000;
-        int hundredth = f / 100 % 10;
-        int tenth = f % 100 / 10;
+        int hundredth = (f % 1000) / 100;
+        int tenth = (f % 100) / 10;
         int oness = f % 1000 % 10;
 
+        // TODO optimize by using the count - 4 (since we know there are 4 numbers)
         int lessFive = 0;
         int moreFive = 0;
         if (thousandth < 5) {

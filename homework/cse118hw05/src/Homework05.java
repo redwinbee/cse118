@@ -147,7 +147,7 @@ public class Homework05 {
 
         double sides = (a * a) + (b * b);
         double hypo = (c * c);
-        if (Math.abs(sides - hypo) <= 0.000000) {
+        if (Math.abs(sides - hypo) < 0.0000) {
             System.out.println("it's a right triangle!");
         } else {
             System.out.println("not a right triangle...");

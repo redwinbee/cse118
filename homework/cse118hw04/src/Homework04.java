@@ -98,36 +98,23 @@ public class Homework04 {
         int tenth = (f % 100) / 10;
         int oness = f % 1000 % 10;
 
-        // TODO optimize by using the count - 4 (since we know there are 4 numbers)
         int lessFive = 0;
-        int moreFive = 0;
         if (thousandth < 5) {
             lessFive++;
-        } else {
-            moreFive++;
         }
-
         if (hundredth < 5) {
             lessFive++;
-        } else {
-            moreFive++;
         }
-
         if (tenth < 5) {
             lessFive++;
-        } else {
-            moreFive++;
         }
-
         if (oness < 5) {
             lessFive++;
-        } else {
-            moreFive++;
         }
 
         System.out.println("num: " + f);
         System.out.println(
-                "there are " + lessFive + " digit(s) less than 5 and " + moreFive + " digit(s) greater than 5.");
+                String.format("%d digit(s) less than 5 and %d digit(s) more than 4", lessFive, Math.abs(lessFive - 4)));
 
         // ------------------------------------------------------------
 
@@ -136,6 +123,7 @@ public class Homework04 {
 
         System.out.println("chosen point: (" + px + ", " + py + ")");
 
+        // TODO rewrite without == operator
         if (px == 0 && py == 0) {
             System.out.println("point is on the origin.");
         } else if (px == 0) {

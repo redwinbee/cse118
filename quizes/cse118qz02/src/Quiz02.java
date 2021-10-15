@@ -18,14 +18,11 @@ public class Quiz02 {
         int evens = 0;
         if (n1 % 2 == 0) {
             evens++;
-        }
-        if (n2 % 2 == 0) {
+        } else if (n2 % 2 == 0) {
             evens++;
-        }
-        if (n3 % 2 == 0) {
+        } else if (n3 % 2 == 0) {
             evens++;
-        }
-        if (n4 % 2 == 0) {
+        } else if (n4 % 2 == 0) {
             evens++;
         }
 

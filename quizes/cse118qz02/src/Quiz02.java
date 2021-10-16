@@ -28,9 +28,10 @@ public class Quiz02 {
         if (n4 % 2 == 0) {
             evens++;
         }
+        int odds = evens > 4 ? evens - 4 : 4 - evens;
 
         System.out.println("q01c: there are " + evens + " even numbers");
-        System.out.println("q01c: there are " + Math.abs(evens - 4) + " odd numbers");
+        System.out.println("q01c: there are " + odds + " odd numbers");
 
         // ------------------------------------------------
 
@@ -46,9 +47,9 @@ public class Quiz02 {
 
         // ------------------------------------------------
 
-        int length = rand.nextInt(101) + 10; // [10, 100]
+        int length = 100;
         int feet = length / 12;
-        int inches = Math.abs((feet * 12) - length);
+        int inches = (feet * 12) > length ? (feet * 12) - length : length - (feet * 12);
 
         System.out.println(String.format("q03: %din = [%d feet and %d inches]", length, feet, inches));
     }

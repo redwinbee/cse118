@@ -96,5 +96,7 @@ public class Exercise10 {
          */
         double d1 = 2.3456;
         System.out.printf("[%12.3f]\t [%-12.3f]\n", d1, d1);
+
+        scanner.close();
     }
 }

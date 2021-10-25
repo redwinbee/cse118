@@ -14,14 +14,13 @@ public class Homework06 {
         char digitChar = (char) (rand.nextInt(9) + '0');
         System.out.println("[#1b] random digit char: " + digitChar);
 
-        // int n1 = rand.nextInt(36);
-        int n1 = 30;
+        int n1 = rand.nextInt(36);
         if (n1 < 26) {
             char letter = (char) (n1 + 'A');
-            System.out.println("letter: " + letter);
+            System.out.println("[#1c] random letter: " + letter);
         } else {
             char num = (char) ('0' + (n1 - 26));
-            System.out.println("num: " + num);
+            System.out.println("[#1c] random digit: " + num);
         }
 
         // --------------------------------------------------------------------

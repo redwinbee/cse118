@@ -11,9 +11,8 @@ public class Exercise09 {
         char randDigit = (char) (rand.nextInt(10) + 48);
 
         // randomly generate a letter
-        // TODO: fix
         char newCh = 0;
-        char n1 = (char) (rand.nextInt(52) + 'a');
+        int n1 = rand.nextInt(52);
         if (n1 < 26) {
             newCh = (char) (n1 + 'A');
         } else {
@@ -21,9 +20,8 @@ public class Exercise09 {
         }
 
         // randomly generate a letter or digit
-        // TODO: fix
         char newChOrDig = 0;
-        char n2 = (char) (rand.nextInt(62) + 'a');
+        int n2 = rand.nextInt(62);
         if (n2 < 26) {
             newChOrDig = (char) (n2 + 'A');
         } else if (n2 < 52) {

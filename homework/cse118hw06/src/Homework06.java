@@ -164,5 +164,7 @@ public class Homework06 {
         System.out.printf("  1 %10.2f\t%8.2f\n", METER_FEET, METER_FEET * 12);
         System.out.printf("  2 %10.2f\t%8.2f\n", feet2M, inch2M);
         System.out.printf("  3 %10.2f\t%8.2f\n", feet3M, inch3M);
+
+        scan.close();
     }
 }

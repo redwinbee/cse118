@@ -62,12 +62,12 @@ public class Homework05 {
         // -------------------------------------------------------------
 
         int n3 = rand.nextInt(10_001);
-        if ((n3 % 2 == 0 && n3 % 3 == 0) || (n3 % 2 == 0 && n3 % 5 == 0) || (n3 % 3 == 0 && n3 % 5 == 0)) {
-            System.out.println("n3: " + n3);
-        } else {
-            System.out.println("n3 = " + n3);
-            System.out.println("n3 is not divisible by any pair of (2, 3, 5)");
-        }
+        // if ((n3 % 2 == 0 && n3 % 3 == 0) || (n3 % 2 == 0 && n3 % 5 == 0) || (n3 % 3 == 0 && n3 % 5 == 0)) {
+        //     System.out.println("n3: " + n3);
+        // } else {
+        //     System.out.println("n3 = " + n3);
+        //     System.out.println("n3 is not divisible by any pair of (2, 3, 5)");
+        // }
 
         // slightly more efficient method
         int count = 0;
@@ -103,15 +103,15 @@ public class Homework05 {
 
         System.out.println("original input: " + input);
 
-        if (input < 11) {
-            input = 11;
-            System.out.println("modifiying... input is now: " + input);
-        } else if (input > 99) {
-            input = 99;
-            System.out.println("modifying... input is now: " + input);
-        } else {
-            System.out.println("nothing to do! input is: " + input);
-        }
+        // if (input < 11) {
+        //     input = 11;
+        //     System.out.println("modifiying... input is now: " + input);
+        // } else if (input > 99) {
+        //     input = 99;
+        //     System.out.println("modifying... input is now: " + input);
+        // } else {
+        //     System.out.println("nothing to do! input is: " + input);
+        // }
 
         // another way to check without if/else statements
         input = (input < 11) ? 11 : (input > 99) ? 99 : input;

@@ -69,6 +69,18 @@ public class Homework05 {
             System.out.println("n3 is not divisible by any pair of (2, 3, 5)");
         }
 
+        // slightly more efficient method
+        int count = 0;
+        if (n3 % 2 == 0) count++;
+        if (n3 % 3 == 0) count++;
+        if (n3 % 5 == 0) count++;
+        if (count > 2) {
+            System.out.println("n3: " + n3);
+        } else {
+            System.out.println("n3: " + n3);
+            System.out.println("n3 is not divisible by any pair of (2, 3,");
+        }
+
         // -------------------------------------------------------------
 
         int n4 = rand.nextInt();
@@ -100,6 +112,10 @@ public class Homework05 {
         } else {
             System.out.println("nothing to do! input is: " + input);
         }
+
+        // another way to check without if/else statements
+        input = (input < 11) ? 11 : (input > 99) ? 99 : input;
+        System.out.println("modified input: " + input);
 
         scanner.close();
 

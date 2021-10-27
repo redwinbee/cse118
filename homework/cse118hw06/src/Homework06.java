@@ -88,7 +88,7 @@ public class Homework06 {
         System.out.printf("[#2h1] str1: firstWord={%s}, lastWord={%s}\n", str1FW, str1LW);
         System.out.printf("[#2h1] str2: firstWord={%s}, lastWord={%s}\n", str2FW, str2LW);
 
-        // // --------------------------------------------------------------------
+        // --------------------------------------------------------------------
 
         String helloJava = new String("Hello Java World");
         char hJFirstLetter = helloJava.charAt(0);
@@ -99,7 +99,7 @@ public class Homework06 {
 
         // --------------------------------------------------------------------
 
-        System.out.print("[#4] type a word/nums (5 letters only): ");
+        System.out.print("[#4] type a word/nums (5 chars only): ");
         String input = scan.next();
 
         char i1 = input.charAt(0);

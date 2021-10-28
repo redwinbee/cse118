@@ -18,42 +18,42 @@ public class Homework05 {
         int month = rand.nextInt(100) + 10;
         if (month >= 0 && month <= 11) {
             switch (month) {
-                case 0:
-                    System.out.println("january");
-                    break;
-                case 1:
-                    System.out.println("feburary");
-                    break;
-                case 2:
-                    System.out.println("march");
-                    break;
-                case 3:
-                    System.out.println("april");
-                    break;
-                case 4:
-                    System.out.println("may");
-                    break;
-                case 5:
-                    System.out.println("june");
-                    break;
-                case 6:
-                    System.out.println("july");
-                    break;
-                case 7:
-                    System.out.println("august");
-                    break;
-                case 8:
-                    System.out.println("september");
-                    break;
-                case 9:
-                    System.out.println("october");
-                    break;
-                case 10:
-                    System.out.println("november");
-                    break;
-                case 11:
-                    System.out.println("december");
-                    break;
+            case 0:
+                System.out.println("january");
+                break;
+            case 1:
+                System.out.println("feburary");
+                break;
+            case 2:
+                System.out.println("march");
+                break;
+            case 3:
+                System.out.println("april");
+                break;
+            case 4:
+                System.out.println("may");
+                break;
+            case 5:
+                System.out.println("june");
+                break;
+            case 6:
+                System.out.println("july");
+                break;
+            case 7:
+                System.out.println("august");
+                break;
+            case 8:
+                System.out.println("september");
+                break;
+            case 9:
+                System.out.println("october");
+                break;
+            case 10:
+                System.out.println("november");
+                break;
+            case 11:
+                System.out.println("december");
+                break;
             }
         } else {
             System.out.println("invalid!");
@@ -62,18 +62,22 @@ public class Homework05 {
         // -------------------------------------------------------------
 
         int n3 = rand.nextInt(10_001);
-        // if ((n3 % 2 == 0 && n3 % 3 == 0) || (n3 % 2 == 0 && n3 % 5 == 0) || (n3 % 3 == 0 && n3 % 5 == 0)) {
-        //     System.out.println("n3: " + n3);
+        // if ((n3 % 2 == 0 && n3 % 3 == 0) || (n3 % 2 == 0 && n3 % 5 == 0) || (n3 % 3
+        // == 0 && n3 % 5 == 0)) {
+        // System.out.println("n3: " + n3);
         // } else {
-        //     System.out.println("n3 = " + n3);
-        //     System.out.println("n3 is not divisible by any pair of (2, 3, 5)");
+        // System.out.println("n3 = " + n3);
+        // System.out.println("n3 is not divisible by any pair of (2, 3, 5)");
         // }
 
         // slightly more efficient method
         int count = 0;
-        if (n3 % 2 == 0) count++;
-        if (n3 % 3 == 0) count++;
-        if (n3 % 5 == 0) count++;
+        if (n3 % 2 == 0)
+            count++;
+        if (n3 % 3 == 0)
+            count++;
+        if (n3 % 5 == 0)
+            count++;
         if (count > 2) {
             System.out.println("n3: " + n3);
         } else {
@@ -104,13 +108,13 @@ public class Homework05 {
         System.out.println("original input: " + input);
 
         // if (input < 11) {
-        //     input = 11;
-        //     System.out.println("modifiying... input is now: " + input);
+        // input = 11;
+        // System.out.println("modifiying... input is now: " + input);
         // } else if (input > 99) {
-        //     input = 99;
-        //     System.out.println("modifying... input is now: " + input);
+        // input = 99;
+        // System.out.println("modifying... input is now: " + input);
         // } else {
-        //     System.out.println("nothing to do! input is: " + input);
+        // System.out.println("nothing to do! input is: " + input);
         // }
 
         // another way to check without if/else statements

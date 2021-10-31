@@ -118,39 +118,19 @@ public class Homework06 {
 
         // --------------------------------------------------------------------
 
-        int r1 = rand.nextInt(17);
-        char hx1 = 'A';
-        if (r1 < 8) {
-            hx1 = (char) (r1 + 'A');
-        } else {
-            hx1 = (char) ('0' + (r1 - 8));
+        int count = 0;
+        String hexVals = new String();
+        while (count < 4) {
+            int nextR = rand.nextInt(17);
+            if (nextR < 8) {
+                hexVals += (char) (nextR + 'A');
+            } else {
+                hexVals += (char) ('0' + (nextR - 8));
+            }
+            count++;
         }
 
-        int r2 = rand.nextInt(17);
-        char hx2 = 'A';
-        if (r2 < 8) {
-            hx2 = (char) (r2 + 'A');
-        } else {
-            hx2 = (char) ('0' + (r2 - 8));
-        }
-
-        int r3 = rand.nextInt(17);
-        char hx3 = 'A';
-        if (r3 < 8) {
-            hx3 = (char) (r3 + 'A');
-        } else {
-            hx3 = (char) ('0' + (r3 - 8));
-        }
-
-        int r4 = rand.nextInt(17);
-        char hx4 = 'A';
-        if (r4 < 8) {
-            hx4 = (char) (r4 + 'A');
-        } else {
-            hx4 = (char) ('0' + (r4 - 8));
-        }
-
-        System.out.println("[#5] random hex number: " + "0x" + hx1 + hx2 + hx3 + hx4);
+        System.out.println("[#5] random hex number: " + "0x" + hexVals);
 
         // --------------------------------------------------------------------
 

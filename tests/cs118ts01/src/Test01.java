@@ -70,8 +70,7 @@ public class Test01 {
 
         // -----------------------------------------------------
 
-        int rand1 = 3553;
-        // int rand1 = rand.nextInt(10_000) + 1_000;
+        int rand1 = rand.nextInt(10_000) + 1_000;
         System.out.println("[#4a] rand 4-digit num: " + rand1);
 
         int thousandth = rand1 / 1_000;

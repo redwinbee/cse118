@@ -32,7 +32,7 @@ public class Test01 {
         }
 
         double z = ((2.0 / 3.0) * x * x) + ((3.0 / 4.0) * x * y) - ((4.0 / 5.0) * y * y);
-        System.out.printf("[#1c] f(%f, %f) = %f", x, y, z);
+        System.out.printf("[#1c] f(%f, %f) = %f\n", x, y, z);
 
         int w = (int) z;
         System.out.printf("[#1d] w=[%d]\n", w);
@@ -118,15 +118,16 @@ public class Test01 {
 
         // -----------------------------------------------------
 
-        System.out.println("[#6a] type in a string (minimum 3 words):");
-        // String inputStr = scan.nextLine();
+        System.out.print("[#6a] type in a string (minimum 3 words): ");
         /**
-         * for some reason the program isn't letting me enter a string when I use
-         * scan.nextLine() so I hardcoded a string instead. I don't know why it's doing
-         * that
+         * consume any *newline* characters leftover from scan.nextInt() or
+         * scan.nextDouble(), otherwise you're left with newlines in the buffer which
+         * breaks our code where we need to input a string.
+         * 
+         * https://stackoverflow.com/questions/13102045/scanner-is-skipping-nextline-after-using-next-or-nextfoo
          */
-        String inputStr = new String();
-        inputStr = "The quick brown fox";
+        scan.nextLine();
+        String inputStr = scan.nextLine();
 
         System.out.println("[#6b2] length: " + inputStr.length() + " chars");
         System.out.println("[#6b3] first-char: " + inputStr.charAt(0));

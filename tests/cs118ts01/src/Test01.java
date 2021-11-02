@@ -140,11 +140,10 @@ public class Test01 {
         System.out.println("[#6c1] first-word: " + firstWord);
         System.out.println("[#6c2] last-word: " + lastWord);
 
-        System.out.println(
-                "[#6d1] the first and last words are %s" + (firstWord.equals(lastWord) ? "the same" : "not the same"));
+        System.out.printf("[#6d1] the first and last words are %s\n",
+                (firstWord.equals(lastWord) ? "the same" : "not the same"));
 
         scan.close();
-        // didn't finish last 2 questions
         // -----------------------------------------------------
 
     }

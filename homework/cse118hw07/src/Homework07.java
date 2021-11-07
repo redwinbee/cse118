@@ -31,10 +31,7 @@ public class Homework07 {
                                                                    // throw an exception
             if (Character.isDigit(prev)) {
                 digitChars++;
-                // otherwise our ascending logic fails too early
-                if (Character.isDigit(prev)) {
-                    ascending = (prev <= curr);
-                }
+                ascending = (prev <= curr);
 
                 // it's no longer ascending on the first fail
                 if (!ascending) {

@@ -64,6 +64,8 @@ public class Exercise14 {
         swap(a, b);
 
         System.out.println("is divisor: " + eitherDivisor(5, 25));
+
+        scan.close();
     }
 
     /**

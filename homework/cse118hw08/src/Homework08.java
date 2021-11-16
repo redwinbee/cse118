@@ -79,12 +79,41 @@ public class Homework08 {
 
         // -------------------------------------------------------------
 
-        // sequence: 1, 1, 2, 3, 5, 8, 13, 21, ...
-        /*
-         * pattern: starting at 1, add the first number to the previous (1 + 0) and
-         * continue with the result -> (1 + 2) = 3 , (2 + 3) = 5, (3 + 5) = 8, ...
-         */
+        System.out.printf("1\t");
 
-        System.out.print("1, ");
+        int addend1 = 0;
+        int addend2 = 1;
+        int result = 0;
+        for (int i = 1; i <= 30; i++) {
+            if (i % 6 == 0) {
+                System.out.println();
+            }
+
+            result = addend1 + addend2;
+            System.out.printf("%d\t", result);
+
+            addend1 = addend2;
+            addend2 = result;
+        }
+
+        // -------------------------------------------------------------
+
+        String original = "Hello    Java     World";
+        String modified = new String();
+        for (int i = 0; i < original.length(); i++) {
+            if (Character.isWhitespace(original.charAt(i))) {
+                modified += original.charAt(i); // keep at least 1 space
+                while (Character.isWhitespace(original.charAt(i))) {
+                    i++;
+                }
+            }
+
+            modified += original.charAt(i);
+        }
+
+        System.out.println("[q7] normalized string:");
+        System.out.println("[q7] " + modified);
+
+        scan.close();
     }
 }

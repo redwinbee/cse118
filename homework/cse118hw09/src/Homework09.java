@@ -30,6 +30,31 @@ public class Homework09 {
 
         // ========================================
 
+        System.out.println("[4] 60 seconds to HH:MM:SS is: " + convertSecondsToHHMMSS(60));
+        System.out.println("[4] 3600 seconds to HH:MM:SS is: " + convertSecondsToHHMMSS(3600));
+        System.out.println("[4] 2456 seconds to HH:MM:SS is: " + convertSecondsToHHMMSS(2456));
+
+        // ========================================
+
+        String asciiTrue = getASCIICode('0', true);
+        String asciiFalse = getASCIICode('0', false);
+        System.out.println("[5a] ascii code of '0' (as decimal): " + asciiTrue);
+        System.out.println("[5a] ascii code of '0' (as hexadecimal): " + asciiFalse);
+
+        System.out.println("char\tdec\thexadec");
+        System.out.println("========================");
+        for (int i = 0; i <= 9; i++) {
+            System.out.printf("%d\t%s\t%s\n", i, getASCIICode((char) ('0' + i), true),
+                    getASCIICode((char) ('0' + i), false));
+        }
+
+        // ========================================
+
+        System.out.println("[6] is '5gH' a valid password? " + isValidPassword("5gH"));
+        System.out.println("[6] is 'gH5JKl3' a valid password? " + isValidPassword("gH5JKl3"));
+        System.out.println("[6] is 'gH5JKl34' a valid password? " + isValidPassword("gH5JKl34"));
+        System.out.println("[6] is 'gH5JKl34%' a valid password? " + isValidPassword("gH5JKl34%"));
+
         scanner.close();
     }
 
@@ -121,5 +146,100 @@ public class Homework09 {
         }
 
         return isPal;
+    }
+
+    /**
+     * converts a given number of seconds to the format HH:MM:SS
+     *
+     * @param seconds the number of seconds to convert
+     * @return the string representation of the number of seconds in HH:MM:SS format
+     */
+    public static String convertSecondsToHHMMSS(int seconds) {
+        int hours = seconds / 3600;
+        seconds -= hours * 3600;
+        int minutes = seconds / 60;
+        seconds -= (minutes * 60);
+
+        return String.format("%s:%s:%s", toFormatted(hours), toFormatted(minutes), toFormatted(seconds));
+    }
+
+    /**
+     * converts a given duration to conform to the requirements to fit inside the
+     * format HH:MM:SS
+     * 
+     * @param duration a given duration
+     * @return the string representation of the given duration
+     */
+    private static String toFormatted(int duration) {
+        return (duration < 10 ? "0" + duration : Integer.toString(duration));
+    }
+
+    /**
+     * converts the given chraacter to its ASCII code representation
+     * 
+     * @param ch        the character to obtain the ASCII code of
+     * @param asDecimal whether or not the ASCII code should be returned as a
+     *                  decimal or hexadecimal
+     * @return the ASCII code of the character
+     */
+    public static String getASCIICode(char ch, boolean asDecimal) {
+        int code = '\u0000' + ch;
+        return (asDecimal ? Integer.toString(code) : convertToHexa(code));
+    }
+
+    /**
+     * converts a given decimal value into hexadecimal
+     * 
+     * @param dec the value to convert
+     * @return the hexadecimal representation
+     */
+    private static String convertToHexa(int dec) {
+        int next = dec;
+        String hexa = "";
+        while (next > 0) {
+            int rem = next % 16;
+            next /= 16;
+            if (rem < 10) {
+                hexa = rem + hexa;
+            } else {
+                char ch = (char) ('A' + (rem - 10));
+                hexa = ch + hexa;
+            }
+        }
+
+        return "0x" + hexa;
+    }
+
+    /**
+     * determines if a password is valid based on the follwing conditions: 1) there
+     * are more than 8 characters 2) it doesn't start with a number 3) it only
+     * contains letters or numbers 4) it has at least 2 digits
+     * 
+     * @param password the password to check
+     * @return whether or not the password is valid
+     */
+    public static boolean isValidPassword(String password) {
+        boolean isValid = true;
+        if (password.length() < 8 || Character.isDigit(password.charAt(0))) {
+            return false;
+        } else {
+            int digitCount = 0;
+            for (int i = 0; i < password.length(); i++) {
+                char curr = password.charAt(i);
+                if (Character.isDigit(curr)) {
+                    digitCount++;
+                }
+
+                if (!(Character.isDigit(curr) || Character.isLetter(curr))) {
+                    isValid = false;
+                }
+            }
+
+            if (digitCount < 2) {
+                isValid = false;
+            }
+        }
+
+        return isValid;
     }
 }

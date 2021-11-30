@@ -73,6 +73,8 @@ public class Exercise17 {
         System.out.println("max-value in numbers[]: " + max);
         System.out.println("min-value in numbers[]: " + min);
         System.out.println("average values in numbers[]: " + total / (double) numbers.length);
+
+        scanner.close();
     }
 
     /**

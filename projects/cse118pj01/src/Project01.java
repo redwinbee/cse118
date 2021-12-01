@@ -3,18 +3,47 @@ package cse118pj01.src;
 import java.util.Scanner;
 
 public class Project01 {
+    private static final String[] months = { "January", "Feburary", "March", "April", "May", "June", "July", "August",
+            "September", "October", "November", "December" };
+
+    private static final String[] days = { "Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat" };
+
     public static void main(String[] args) {
         final Scanner scan = new Scanner(System.in);
 
         System.out.print("enter a year: ");
+
         int year = Integer.parseInt(scan.nextLine());
         System.out.print("enter the first weekday of the year: ");
         int firstDay = Integer.parseInt(scan.nextLine());
 
+        int count = 1;
+        int skips = firstDay;
         for (int i = 0; i <= 11; i++) {
             printCalendarTemplate(i, year);
+            count = 1;
+            for (int j = 0; j < skips; j++) {
+                System.out.printf("\t");
+                count++;
+            }
+            for (int k = 1; k <= daysInMonth(i, year); k++) {
+                System.out.printf("%d\t", k);
+                if (count % 7 == 0) {
+                    System.out.println();
+                }
+
+                count++;
+
+            }
             System.out.println();
-            System.out.println();
+
+            /**
+             * take the modulus of the count with the offset substracted, use that for the
+             * skips needed for the next month, however, if the nuber is divisible by 7, we
+             * know how many weeks have passed which also means we know the day we landed
+             * on, just add 1 back to the offset
+             */
+            skips = (count % 7 != 0) ? Math.abs((count % 7) - 1) : (count / 7) + 1;
         }
 
         scan.close();
@@ -37,6 +66,8 @@ public class Project01 {
         for (int i = 0; i <= 6; i++) {
             System.out.printf("%s\t", getDay(i));
         }
+
+        System.out.println();
     }
 
     /**
@@ -46,47 +77,7 @@ public class Project01 {
      * @return the name of the month
      */
     public static String getMonth(int monthIdx) {
-        String month = new String();
-        switch (monthIdx) {
-        case 0:
-            month = "January";
-            break;
-        case 1:
-            month = "Feburary";
-            break;
-        case 2:
-            month = "March";
-            break;
-        case 3:
-            month = "April";
-            break;
-        case 4:
-            month = "May";
-            break;
-        case 5:
-            month = "June";
-            break;
-        case 6:
-            month = "July";
-            break;
-        case 7:
-            month = "August";
-            break;
-        case 8:
-            month = "September";
-            break;
-        case 9:
-            month = "October";
-            break;
-        case 10:
-            month = "November";
-            break;
-        case 11:
-            month = "December";
-            break;
-        }
-
-        return month;
+        return months[monthIdx];
     }
 
     /**
@@ -96,32 +87,7 @@ public class Project01 {
      * @return the name of the day
      */
     public static String getDay(int dayIdx) {
-        String day = new String();
-        switch (dayIdx) {
-        case 0:
-            day = "Sun";
-            break;
-        case 1:
-            day = "Mon";
-            break;
-        case 2:
-            day = "Tue";
-            break;
-        case 3:
-            day = "Wed";
-            break;
-        case 4:
-            day = "Thur";
-            break;
-        case 5:
-            day = "Fri";
-            break;
-        case 6:
-            day = "Sat";
-            break;
-        }
-
-        return day;
+        return days[dayIdx];
     }
 
     /**
@@ -129,47 +95,48 @@ public class Project01 {
      * index starting from 0
      * 
      * @param monthIdx the month
+     * @param year     the year (in-case we're dealing with leap-years)
      * @return how many days in the given month
      */
-    public static int daysInMonth(int monthIdx) {
+    public static int daysInMonth(int monthIdx, int year) {
         int days = 0;
         switch (monthIdx) {
-        case 0: // january
-            days = 31;
-            break;
-        case 1: // feburary
-            days = 28;
-            break;
-        case 2: // march
-            days = 31;
-            break;
-        case 3: // april
-            days = 30;
-            break;
-        case 4: // may
-            days = 31;
-            break;
-        case 5: // june
-            days = 30;
-            break;
-        case 6: // july
-            days = 31;
-            break;
-        case 7: // august
-            days = 31;
-            break;
-        case 8: // september
-            days = 30;
-            break;
-        case 9: // october
-            days = 31;
-            break;
-        case 10: // november
-            days = 30;
-            break;
-        case 11:
-            days = 31;
-            break;
+            case 0: // january
+                days = 31;
+                break;
+            case 1: // feburary
+                days = year % 4 == 0 ? 29 : 28;
+                break;
+            case 2: // march
+                days = 31;
+                break;
+            case 3: // april
+                days = 30;
+                break;
+            case 4: // may
+                days = 31;
+                break;
+            case 5: // june
+                days = 30;
+                break;
+            case 6: // july
+                days = 31;
+                break;
+            case 7: // august
+                days = 31;
+                break;
+            case 8: // september
+                days = 30;
+                break;
+            case 9: // october
+                days = 31;
+                break;
+            case 10: // november
+                days = 30;
+                break;
+            case 11:
+                days = 31;
+                break;
         }
 
         return days;

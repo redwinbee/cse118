@@ -98,7 +98,7 @@ public class Project01 {
                 days = 31;
                 break;
             case 1: // feburary
-                days = year % 4 == 0 ? 29 : 28;
+                days = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) ? 29 : 28;
                 break;
             case 2: // march
                 days = 31;

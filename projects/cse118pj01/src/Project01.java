@@ -14,10 +14,9 @@ public class Project01 {
         System.out.print("enter a year: ");
         int year = Integer.parseInt(scan.nextLine());
         System.out.print("enter the first weekday of the year: ");
-        int firstDay = Integer.parseInt(scan.nextLine());
+        int skips = Integer.parseInt(scan.nextLine());
 
         int count = 1;
-        int skips = firstDay;
         for (int i = 0; i <= 11; i++) {
             printCalendarTemplate(i, year);
             count = 1;

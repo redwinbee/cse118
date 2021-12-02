@@ -12,7 +12,6 @@ public class Project01 {
         final Scanner scan = new Scanner(System.in);
 
         System.out.print("enter a year: ");
-
         int year = Integer.parseInt(scan.nextLine());
         System.out.print("enter the first weekday of the year: ");
         int firstDay = Integer.parseInt(scan.nextLine());
@@ -31,9 +30,7 @@ public class Project01 {
                 if (count % 7 == 0) {
                     System.out.println();
                 }
-
                 count++;
-
             }
             System.out.println();
 
@@ -60,13 +57,10 @@ public class Project01 {
         for (int i = 0; i < 50; i++) {
             System.out.printf("\u0336"); // "combining long stroke overlay"
         }
-
         System.out.println();
-
         for (int i = 0; i <= 6; i++) {
             System.out.printf("%s\t", getDay(i));
         }
-
         System.out.println();
     }
 

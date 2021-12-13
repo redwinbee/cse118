@@ -28,13 +28,13 @@ public class Project02 {
         System.out.println(" -- lowest: " + highestAndLowest[1]);
 
         // (3) calculate "mean" and "median"
-        System.out.printf("Mean and Median scores:\n");
-        System.out.println(" -- mean: " + calculateMean(scores));
-        System.out.println(" -- median: " + calculateMedian(scores));
+        System.out.println("Mean and Median scores:");
+        System.out.printf(" -- mean: %.2f\n", calculateMean(scores));
+        System.out.printf(" -- median: %.2f\n", calculateMedian(scores));
 
         // (4) calculate "standard derivation"
-        System.out.printf("Standard derivation:\n");
-        System.out.println(" -- standard deviation: " + calculateStandardDeviation(scores));
+        System.out.println("Standard derivation:");
+        System.out.printf(" -- standard deviation: %.2f\n", calculateStandardDeviation(scores));
 
         // (5) calculate distribution: "percentage of grades" + display data in
         // "histogram"
@@ -156,26 +156,27 @@ public class Project02 {
      * @param scores the scores the print
      */
     public static void printDistribution(int... scores) {
-        int numOfA = 0;
-        int numOfB = 0;
-        int numOfC = 0;
-        int numOfD = 0;
+        int aCount = 0;
+        int bCount = 0;
+        int cCount = 0;
+        int dCount = 0;
         for (int i = 0; i < scores.length; i++) {
-            char letterGrade = getLetterGrade(scores[i]);
-            switch (letterGrade) {
+            char letterScore = getLetterGrade(scores[i]);
+            switch (letterScore) {
                 case 'A':
-                    numOfA++;
+                    aCount++;
                     break;
                 case 'B':
-                    numOfB++;
+                    bCount++;
                     break;
                 case 'C':
-                    numOfC++;
+                    cCount++;
                     break;
                 case 'D':
-                    numOfD++;
+                    dCount++;
+                    break;
             }
         }
-        int numOfF = scores.length - (numOfA + numOfB + numOfC + numOfD);
+        int fCount = scores.length - (aCount + bCount + cCount + dCount);
     }
 }

@@ -156,27 +156,75 @@ public class Project02 {
      * @param scores the scores the print
      */
     public static void printDistribution(int... scores) {
-        int aCount = 0;
-        int bCount = 0;
-        int cCount = 0;
-        int dCount = 0;
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        int d = 0;
         for (int i = 0; i < scores.length; i++) {
             char letterScore = getLetterGrade(scores[i]);
             switch (letterScore) {
                 case 'A':
-                    aCount++;
+                    a++;
                     break;
                 case 'B':
-                    bCount++;
+                    b++;
                     break;
                 case 'C':
-                    cCount++;
+                    c++;
                     break;
                 case 'D':
-                    dCount++;
+                    d++;
                     break;
             }
         }
-        int fCount = scores.length - (aCount + bCount + cCount + dCount);
+        int f = scores.length - (a + b + c + d);
+
+        System.out.printf(" -- Grade A:\t%.2f%s\t%s\n", ((a / (double) scores.length) * 100), "%",
+                graph(a, scores.length));
+        System.out.printf(" -- Grade B:\t%.2f%s\t%s\n", ((b / (double) scores.length) * 100), "%",
+                graph(b, scores.length));
+        System.out.printf(" -- Grade C:\t%.2f%s\t%s\n", ((c / (double) scores.length) * 100), "%",
+                graph(c, scores.length));
+        System.out.printf(" -- Grade D:\t%.2f%s\t%s\n", ((d / (double) scores.length) * 100), "%",
+                graph(d, scores.length));
+        System.out.printf(" -- Grade F:\t%.2f%s\t%s\n", ((f / (double) scores.length) * 100), "%",
+                graph(f, scores.length));
+        System.out.printf(" -- All Grades: 100.00%s\t%s\n", "%", (graph(scores.length, scores.length)));
+
+        // System.out.println(
+        // " -- Grade A:\t" + (a / (double) scores.length) * 100 + "%\t" + graph(a,
+        // scores.length));
+        // System.out.println(
+        // " -- Grade B:\t" + (b / (double) scores.length) * 100 + "%\t" + graph(b,
+        // scores.length));
+        // System.out.println(
+        // " -- Grade C:\t" + (c / (double) scores.length) * 100 + "%\t" + graph(c,
+        // scores.length));
+        // System.out.println(
+        // " -- Grade D:\t" + (d / (double) scores.length) * 100 + "%\t" + graph(d,
+        // scores.length));
+        // System.out.println(
+        // " -- Grade F:\t" + (f / (double) scores.length) * 100 + "%\t" + graph(f,
+        // scores.length));
+    }
+
+    /**
+     * creates a string that represents the graph of the ratio of count and total,
+     * where count is the number of occurances of a given grade, and the total is
+     * the total number of scores.
+     * 
+     * @param count the count of a certain grade
+     * @param total the number of grades in total
+     * @return a string rep. of the graph, using asterisks
+     */
+    private static String graph(int count, int total) {
+        String out = "";
+        double asterisks = ((count / (double) total) * 100) / 1.5; // this is completely arbitrary, just some scale...
+        while (asterisks > 0) {
+            out += "*";
+            asterisks--;
+        }
+
+        return out;
     }
 }

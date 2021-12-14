@@ -190,22 +190,6 @@ public class Project02 {
         System.out.printf(" -- Grade F:\t%.2f%s\t%s\n", ((f / (double) scores.length) * 100), "%",
                 graph(f, scores.length));
         System.out.printf(" -- All Grades: 100.00%s\t%s\n", "%", (graph(scores.length, scores.length)));
-
-        // System.out.println(
-        // " -- Grade A:\t" + (a / (double) scores.length) * 100 + "%\t" + graph(a,
-        // scores.length));
-        // System.out.println(
-        // " -- Grade B:\t" + (b / (double) scores.length) * 100 + "%\t" + graph(b,
-        // scores.length));
-        // System.out.println(
-        // " -- Grade C:\t" + (c / (double) scores.length) * 100 + "%\t" + graph(c,
-        // scores.length));
-        // System.out.println(
-        // " -- Grade D:\t" + (d / (double) scores.length) * 100 + "%\t" + graph(d,
-        // scores.length));
-        // System.out.println(
-        // " -- Grade F:\t" + (f / (double) scores.length) * 100 + "%\t" + graph(f,
-        // scores.length));
     }
 
     /**

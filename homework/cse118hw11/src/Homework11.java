@@ -177,6 +177,7 @@ public class Homework11 {
                 idx++;
             }
         }
+
         return out;
     }
 }

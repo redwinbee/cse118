@@ -26,7 +26,7 @@ public class Homework11 {
         System.out.println("[5] checking if [3,2,1] is sorted: " + (isSorted(3, 2, 1) ? "yes" : "no"));
         System.out.println("[5] checking if [1,7,3] is sorted: " + (isSorted(1, 7, 3) ? "yes" : "no"));
 
-        int[] unorganized = { 4, 3, 8, 6, 1, 7, 9, 2 };
+        int[] unorganized = { 2, 1, 9, 6, 4, 5 };
         int[] organized = reorganizeArray(unorganized);
         System.out.println("[6] unorganized array: " + Arrays.toString(unorganized));
         System.out.println("[6] organized array: " + Arrays.toString(organized));
@@ -159,22 +159,24 @@ public class Homework11 {
     /**
      * reorganizes the elements of an array by placing all the odd numbers in front
      * of all the even numbers. note that this method will return a new array of the
-     * reorganized array and does not affect the original
+     * reorganized array and does not affect the original.
      * 
      * @param array the array to reorganize
-     * @return the new array, reorganized
+     * @return the reorganized array
      */
     public static int[] reorganizeArray(int[] array) {
         int[] out = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            out[i] = array[i];
-        }
-
         int idx = 0;
-        for (int i = out.length - 1; i > out.length / 2; i--) {
-            // finish
+        int lastIdx = out.length - 1;
+        for (int value : array) {
+            if (value % 2 == 0) {
+                out[lastIdx] = value;
+                lastIdx--;
+            } else {
+                out[idx] = value;
+                idx++;
+            }
         }
-
         return out;
     }
 }

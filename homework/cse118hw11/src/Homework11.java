@@ -1,6 +1,5 @@
 package cse118hw11.src;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Homework11 {
@@ -18,9 +17,9 @@ public class Homework11 {
         System.out.printf("[3] arr1 and arr2 are %s\n", checkArraysEqual(arr1, arr2) ? "equal" : "not equal");
 
         int[] toReverse = { 1, 5, 9, 3 };
-        System.out.println("[4] original array: " + Arrays.toString(toReverse));
+        System.out.println("[4] original array: " + printArray(toReverse));
         reverseArray(toReverse);
-        System.out.println("[4] reversed array: " + Arrays.toString(toReverse));
+        System.out.println("[4] reversed array: " + printArray(toReverse));
 
         System.out.println("[5] checking if [1,2,3] is sorted: " + (isSorted(1, 2, 3) ? "yes" : "no"));
         System.out.println("[5] checking if [3,2,1] is sorted: " + (isSorted(3, 2, 1) ? "yes" : "no"));
@@ -28,8 +27,8 @@ public class Homework11 {
 
         int[] unorganized = { 2, 1, 9, 6, 4, 5 };
         int[] organized = reorganizeArray(unorganized);
-        System.out.println("[6] unorganized array: " + Arrays.toString(unorganized));
-        System.out.println("[6] organized array: " + Arrays.toString(organized));
+        System.out.println("[6] unorganized array: " + printArray(unorganized));
+        System.out.println("[6] organized array: " + printArray(organized));
     }
 
     /**
@@ -177,6 +176,16 @@ public class Homework11 {
                 idx++;
             }
         }
+
+        return out;
+    }
+
+    private static String printArray(int... array) {
+        String out = "[";
+        for (int i = 0; i < array.length - 1; i++) {
+            out += array[i] + ", ";
+        }
+        out += array[array.length - 1] + "]";
 
         return out;
     }

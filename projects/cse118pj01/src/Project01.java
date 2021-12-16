@@ -6,7 +6,9 @@ public class Project01 {
     private static final String[] months = { "January", "Feburary", "March", "April", "May", "June", "July", "August",
             "September", "October", "November", "December" };
 
-    private static final String[] days = { "Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat" };
+    private static final String[] weekdays = { "Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat" };
+
+    private static final int[] days = { 31, -1, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
     public static void main(String[] args) {
         final Scanner scan = new Scanner(System.in);
@@ -80,7 +82,7 @@ public class Project01 {
      * @return the name of the day
      */
     public static String getDay(int dayIdx) {
-        return days[dayIdx];
+        return weekdays[dayIdx];
     }
 
     /**
@@ -92,46 +94,51 @@ public class Project01 {
      * @return how many days in the given month
      */
     public static int daysInMonth(int monthIdx, int year) {
-        int days = 0;
-        switch (monthIdx) {
-            case 0: // january
-                days = 31;
-                break;
-            case 1: // feburary
-                days = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) ? 29 : 28;
-                break;
-            case 2: // march
-                days = 31;
-                break;
-            case 3: // april
-                days = 30;
-                break;
-            case 4: // may
-                days = 31;
-                break;
-            case 5: // june
-                days = 30;
-                break;
-            case 6: // july
-                days = 31;
-                break;
-            case 7: // august
-                days = 31;
-                break;
-            case 8: // september
-                days = 30;
-                break;
-            case 9: // october
-                days = 31;
-                break;
-            case 10: // november
-                days = 30;
-                break;
-            case 11:
-                days = 31;
-                break;
+        if (monthIdx == 1) {
+            return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) ? 29 : 28;
+        } else {
+            return days[monthIdx];
         }
+        // int days = 0;
+        // switch (monthIdx) {
+        // case 0: // january
+        // days = 31;
+        // break;
+        // case 1: // feburary
+        // days = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) ? 29 : 28;
+        // break;
+        // case 2: // march
+        // days = 31;
+        // break;
+        // case 3: // april
+        // days = 30;
+        // break;
+        // case 4: // may
+        // days = 31;
+        // break;
+        // case 5: // june
+        // days = 30;
+        // break;
+        // case 6: // july
+        // days = 31;
+        // break;
+        // case 7: // august
+        // days = 31;
+        // break;
+        // case 8: // september
+        // days = 30;
+        // break;
+        // case 9: // october
+        // days = 31;
+        // break;
+        // case 10: // november
+        // days = 30;
+        // break;
+        // case 11:
+        // days = 31;
+        // break;
+        // }
 
-        return days;
+        // return days;
     }
 }

@@ -1,8 +1,11 @@
 package cse118ex21.src;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Exercise21 {
+    private static final Random random = new Random();
+
     public static void main(String[] args) {
         // 1) initialize 2d array with random numbers in [0, 10]
         int[][] random = new int[10][10];
@@ -26,6 +29,15 @@ public class Exercise21 {
         // 5) which row has the largest sum, return idx and sum
         int[] maxSum = findMaxSum(random);
         System.out.println("max sum is and found at: " + Arrays.toString(maxSum));
+
+        // 6) find the largest with index of the array
+        int[] largestWithIdx = findLargestWithIdx(random);
+        System.out.println("largest elemement (with indexes) " + Arrays.toString(largestWithIdx));
+
+        // 7) shuffle the array
+        shuffle(random);
+        System.out.println("shuffled array:");
+        print2dArray(random);
     }
 
     /**
@@ -116,5 +128,45 @@ public class Exercise21 {
         }
 
         return new int[] { sum, idx };
+    }
+
+    /**
+     * finds the largest element in 2D array as well as where that element can be
+     * found
+     * 
+     * @param array the array to search
+     * @return index 1, index 2, and the largest element
+     */
+    public static int[] findLargestWithIdx(int[][] array) {
+        int idx1 = 0;
+        int idx2 = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (array[i][j] > array[idx1][idx2]) {
+                    idx1 = i;
+                    idx2 = j;
+                }
+            }
+        }
+
+        return new int[] { idx1, idx2, array[idx1][idx2] };
+    }
+
+    /**
+     * shuffles the values of a 2D array randomly
+     * 
+     * @param array the array to shuffle
+     */
+    public static void shuffle(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                int rn1 = (int) (Math.random() * array.length);
+                int rn2 = (int) (Math.random() * array[rn1].length);
+
+                int temp = array[i][j];
+                array[i][j] = array[rn1][rn2];
+                array[rn1][rn2] = temp;
+            }
+        }
     }
 }

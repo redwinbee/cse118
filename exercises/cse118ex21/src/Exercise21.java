@@ -1,11 +1,8 @@
 package cse118ex21.src;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class Exercise21 {
-    private static final Random random = new Random();
-
     public static void main(String[] args) {
         // 1) initialize 2d array with random numbers in [0, 10]
         int[][] random = new int[10][10];

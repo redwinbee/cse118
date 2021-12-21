@@ -131,14 +131,25 @@ public class Homework10 {
         }
 
         boolean isAscending = true;
+        boolean isDescending = true;
         for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
+            if (isAscending && (array[i] > array[i + 1])) {
                 isAscending = false;
+            }
+            if (isDescending && (array[i] < array[i + 1])) {
+                isDescending = false;
+            }
+            if (!isAscending && !isDescending) {
+                // array isn't sorted
                 break;
             }
         }
         System.out.println();
-        System.out.printf("[4] the array %s sorted\n", isAscending ? "is ascendingly" : "is descendingly");
+        if (isAscending || isDescending) {
+            System.out.printf("[4] the array %s sorted\n", isAscending ? "is ascendingly" : "is descendingly");
+        } else {
+            System.out.println("[4] the array is not sorted\n");
+        }
 
         System.out.println();
     }

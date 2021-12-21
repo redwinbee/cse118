@@ -99,46 +99,5 @@ public class Project01 {
         } else {
             return days[monthIdx];
         }
-        // int days = 0;
-        // switch (monthIdx) {
-        // case 0: // january
-        // days = 31;
-        // break;
-        // case 1: // feburary
-        // days = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) ? 29 : 28;
-        // break;
-        // case 2: // march
-        // days = 31;
-        // break;
-        // case 3: // april
-        // days = 30;
-        // break;
-        // case 4: // may
-        // days = 31;
-        // break;
-        // case 5: // june
-        // days = 30;
-        // break;
-        // case 6: // july
-        // days = 31;
-        // break;
-        // case 7: // august
-        // days = 31;
-        // break;
-        // case 8: // september
-        // days = 30;
-        // break;
-        // case 9: // october
-        // days = 31;
-        // break;
-        // case 10: // november
-        // days = 30;
-        // break;
-        // case 11:
-        // days = 31;
-        // break;
-        // }
-
-        // return days;
     }
 }

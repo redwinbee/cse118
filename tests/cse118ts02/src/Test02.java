@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 // Final Exam
+@SuppressWarnings("unused")
 public class Test02 {
     private static final Random random = new Random();
     private static final Scanner scanner = new Scanner(System.in);
